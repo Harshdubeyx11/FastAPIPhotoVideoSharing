@@ -1,5 +1,60 @@
 #Learn fast api with one project - Tech with Tim 
 
--UV is 100x faster than pip
--In pythion when you make the apis the you can directly just in the webiste in the link
-type out /docs after the endpoint to get the swagger link for the apis
+-UV is 100x faster than pip for venv execution and creation 
+
+-In python when you make the apis the you can directly just in the webiste in the link
+type out /docs or /redoc after the endpoint to get the swagger link for the apis
+
+-you can add query parameter to an api which start after a question mark like :
+?query-parameter
+and can also add optional parameters
+
+-in db.py all the files schema for the database is stored 
+
+-in schemas.py it stores the paylod of the post etc endpoints 
+
+-there are librariers like engine , asyncsession etc which are used in the db.py to 
+asynchronously create the tables ,  and make us read and write in the tables 
+
+-then we can go to the app.py and import sqlalchemy libraries and asynccontectmanager
+creates all tables and handles values in db 
+
+-fastapi is asynchronous by default 
+
+-async operations are used when we need to wait for some operations to occur 
+
+-user will send some image to our backend , then backend will upload this to imagekit
+-user will send a file to our api , api will then upload it to imagekit , then we grab 
+the url and save it in out database and serve that to our user on the frontend
+-process will be when the user send us the file we will create a copy of that file ie
+temp file then we will upload the copy and then essentially remove/delete the copy from
+the machine because we no longer need it 
+-so if they upload a mp4 we create a temporary mp4 url and if they upload a jpeg we create
+a temporary jpeg url
+
+-using image kit by changing the url you can trim and all the thing you have uploaded 
+
+-JWT (JSON Web Tokens) authentication tokens are used for web authentiction
+
+-users.py has the authentication process code in it to authenticate users 
+
+-db.py also has tables for the users what all they posted etc one to many like one user 
+can have multiple uploads for different files 
+
+-The jwt token is stored in the session so that whenever we make a request we can use it 
+and it has a lifetime of 3600 secs so that after 3600 secs new jwt has to be generated for
+security issues 
+
+-Way to send JWT token request: send "bearer" + the jwt token then we are able to send an
+authenticated request 
+
+-in the login page we are passing the username and the password and apssing these to the url:
+/auth/jwt/login
+then we get token_data which we store in the st.session_state.token so we can use the jwt token 
+during the session 
+
+-for login and for registering jwt token is required like you send in details then that is
+authenticated with the jwt token 
+
+-during uploading we hit the upload post request with the headers which include the jwt token 
+in frontend.py
