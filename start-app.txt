@@ -1,0 +1,7 @@
+To start the app:
+
+after getting in the FastAPIPhotoVideoSharing folder and configuring the virtual environment 
+
+-start backend:  python main.py
+
+-start frontend:  uv run streamlit run frontend.py
