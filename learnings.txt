@@ -1,0 +1,5 @@
+#Learn fast api with one project - Tech with Tim 
+
+-UV is 100x faster than pip
+-In pythion when you make the apis the you can directly just in the webiste in the link
+type out /docs after the endpoint to get the swagger link for the apis
